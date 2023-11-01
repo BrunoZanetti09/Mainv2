@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'profiles/index'
-  get 'profiles/edit'
+  patch '/profiles/:id/edit', to: 'profiles#update'  # Cambié 'profiles/:id' a '/profiles/:id'
+  get '/profiles/:id/edit', to: 'profiles#edit', as: 'edit_profile'
+  get '/profiles/:id', to: 'profiles#index', as: 'profile'
   get 'profiles/update'
   get 'inicio/index'
   get 'turnos/index'
-  get 'perfiles/index'
   get 'authentication/sessions/new'
   get 'turnos/new'
 

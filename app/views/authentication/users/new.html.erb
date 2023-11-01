@@ -6,40 +6,41 @@
     </li>
   <% end %>
 </div>
-
-  <div>
+ <div class="form-group">
+  <div class="form-group col-md-3">
     <%= form.label :email %>
-    <%= form.email_field :email %>
+    <%= form.email_field :email, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="form-group col-md-2">
     <%= form.label :dni %>
-    <%= form.number_field :dni %>
+    <%= form.number_field :dni, class: "form-control" %>
   </div>
 
-    <div>
+    <div class="form-group col-md-2">
         <%= form.label :nombre %>
-        <%= form.text_field :nombre %>
+        <%= form.text_field :nombre, class: "form-control" %>
     </div>
 
-    <div>
+    <div class="form-group col-md-2">
         <%= form.label :apellido %>
-        <%= form.text_field :apellido %>
+        <%= form.text_field :apellido, class: "form-control" %>
     </div>
 
-    <div> 
+    <div class="form-group col-md-2">
          <%= form.label :rol %>
          <%= form.select :rol, ["Usuario", "Administrador"]%>
     </div>
 
-  <div>
+  <div class="form-group col-md-2">
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, class: "form-control" %>
   </div>
 
   
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group col-md-2">
+    <%= form.submit "Crear Usuario", class: "btn btn-info" %>
   </div>
+ <div>
 <% end %>

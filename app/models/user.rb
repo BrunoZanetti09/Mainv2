@@ -5,10 +5,6 @@ class User < ApplicationRecord
 
   after_create :set_profile
 
-  def set_profile
-  self.profile = profile.create()
-  end
-
   validates :email, presence: true, uniqueness: true,
   format: { with: /\A([\w+-].?)+@[a-z\d-]+(.[a-z]+)*.[a-z]+\z/i,
     message: "formato del mail invalido"
@@ -38,6 +34,9 @@ class User < ApplicationRecord
   before_save :downcase_attributes
 
   private
+  def set_profile
+    @profile = Profile.new
+    end
 
   def downcase_attributes
       self.email = email.downcase
